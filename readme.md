@@ -106,7 +106,7 @@ nextjs-express-AES-256-CBC/
 │   ├── 📂 config/
 │   │   └── index.js              # Configuration
 │   ├── .env                      # Environment variables
-│   ├── server.js                 # Express server entry point
+│   ├── index.js                 # Express server entry point
 │   └── package.json
 │
 ├── 📂 client/                     # Next.js Frontend
