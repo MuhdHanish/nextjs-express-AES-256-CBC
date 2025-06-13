@@ -17,6 +17,18 @@ app.use(express.text());
 
 app.use(cryptoMiddleware);
 
+app.all('/', (req, res) => {
+    res.json({
+        message: 'API is running',
+        method: req.method,
+        timestamp: Date.now({
+            zone: 'Asia/Kolkata'
+        }),
+        status: 'success'
+    });
+});
+
+
 app.post('/api/products', controller.createProduct);
 app.get('/api/products', controller.getProducts);
 app.get('/api/products/:id', controller.getProductById);
@@ -49,6 +61,8 @@ app.listen(PORT, () => {
     console.log('');
     console.log('📡 AVAILABLE ENDPOINTS:');
     console.log('─'.repeat(40));
+    console.log('🏠 Root Route:');
+    console.log(`   ANY   http://localhost:${PORT}/`);
     console.log('🧪 Testing Routes:');
     console.log(`   POST  http://localhost:${PORT}/echo`);
     console.log(`   GET   http://localhost:${PORT}/health`);
