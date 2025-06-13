@@ -188,7 +188,7 @@ export default function ServerActionsClient() {
           <li>• <code>lib/crypto.js</code> - Encryption utilities</li>
           <li>• <code>lib/actions/product.actions.js</code> - Server actions</li>
           <li>• <code>.env.local</code> - Environment variables</li>
-          <li>• <code>components/ServerActionsClient.jsx</code> - This component</li>
+          <li>• <code>app/page.js</code> - This page</li>
         </ul>
       </div>
     </div>
