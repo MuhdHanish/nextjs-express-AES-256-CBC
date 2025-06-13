@@ -21,8 +21,15 @@ app.all('/', (req, res) => {
     res.json({
         message: 'API is running',
         method: req.method,
-        timestamp: Date.now({
-            zone: 'Asia/Kolkata'
+        time: new Date().toLocaleString('en-IN', {
+            timeZone: 'Asia/Kolkata',
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: true
         }),
         status: 'success'
     });
@@ -43,7 +50,16 @@ app.post('/echo', (req, res) => {
 app.get('/health', (req, res) => {
     res.json({
         message: 'Server is healthy',
-        timestamp: Date.now(),
+        time: new Date().toLocaleString('en-IN', {
+            timeZone: 'Asia/Kolkata',
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: true
+        }),
         status: 'success'
     });
 });
