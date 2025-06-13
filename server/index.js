@@ -2,11 +2,16 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const express = require('express');
+const cors = require('cors');
+
 const controller = require('./controller');
 const { cryptoMiddleware } = require('./middleware');
 
 const app = express();
 
+app.use(cors({
+    origin: process.env.NEXT_CLIENT_URL,
+}));
 app.use(express.json());
 app.use(express.text()); 
 
